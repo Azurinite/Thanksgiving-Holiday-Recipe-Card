@@ -1,4 +1,108 @@
 :root {
-    font-family: "Instrument Serif";
+    font-family: 'Instrument Serif', serif;
 }
 
+body {
+   margin: 10%;
+}
+
+
+/* Header */
+
+h1 {
+    color: #000;
+    font-family: "Instrument Serif";
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 50%;
+}
+
+header > p {
+    color: #0C0C0C;
+    font-family: "Instrument Serif";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Body */
+.cookingInfo {
+    position: absolute;
+    top: 125px;
+    right: 10%;
+    padding: 1% 7%;
+    border-radius: 15px;
+    background: #DCD4C1;
+
+    & * {
+        color: #002A61;
+        font-family: "Instrument Serif";
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.cookingInfo p:first-child::before {
+     content: ''; /* Essential for pseudo-elements */
+    display: block; /* Or inline-block, depending on desired layout */
+    width: 50px; /* Set dimensions of the pseudo-element */
+    height: 50px;
+    background-image: url('images/lightModeIcons/oven.png');
+    background-size: contain; /* Or cover, or specific values */
+    background-repeat: no-repeat;
+}
+.cookingInfo p:nth-child(2)::before {
+    content: ''; /* Essential for pseudo-elements */
+    display: block; /* Or inline-block, depending on desired layout */
+    width: 50px; /* Set dimensions of the pseudo-element */
+    height: 50px;
+    background-image: url('images/lightModeIcons/clock.png');
+    background-size: contain; /* Or cover, or specific values */
+    background-repeat: no-repeat;
+}
+.cookingInfo p:last-child::before {
+    content: ''; /* Essential for pseudo-elements */
+    display: block; /* Or inline-block, depending on desired layout */
+    width: auto; /* Set dimensions of the pseudo-element */
+    height: 50px;
+    background-image: url('images/lightModeIcons/plate.png');
+    background-size: contain; /* Or cover, or specific values */
+    background-repeat: no-repeat;
+}
+
+.introductoryParagraph {
+    color: #000;
+    font-family: "Instrument Serif";
+    font-size: 32.5px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.darkMode {
+    position: absolute;
+    top: 5px;
+    right: 10%;
+}
+
+.directions {
+    margin-left: 45%;
+}
+
+.directions h2 {
+    text-align: center;
+}
+
+.ingredients {
+    position: absolute;
+    top: 1320px;
+}
+
+.ingredients h2 {
+    text-align: center;
+}
