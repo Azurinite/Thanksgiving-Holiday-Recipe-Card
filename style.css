@@ -1,5 +1,9 @@
 :root {
     font-family: 'Instrument Serif', serif;
+    font-size: 12px;
+   /* Don't rlly know how rem works, 
+   but I do know this makes it scale
+   */
 }
 
 body {
@@ -11,78 +15,83 @@ body {
 
 h1 {
     color: #000;
-    font-family: "Instrument Serif";
-    font-size: 65px;
-    font-style: normal;
+    font-size: 6.5rem;
     font-weight: 400;
-    line-height: normal;
     margin-right: 50%;
 }
 
 header > p {
     color: #0C0C0C;
-    font-family: "Instrument Serif";
-    font-size: 30px;
-    font-style: normal;
+    font-size: 2.75rem;
     font-weight: 400;
     line-height: normal;
 }
 
 /* Body */
 .cookingInfo {
+    display: flex;
+
     position: absolute;
     top: 125px;
-    right: 10%;
-    padding: 1% 7%;
-    border-radius: 15px;
-    background: #DCD4C1;
+    right: 15%;
+    padding: 9px 50px;
+    border-radius: 10px;
+    background-color: #DCD4C1;
 
-    & * {
+    width: 22.5vw;
+
+    & ul {
+        /* Very slight alignment for text */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & li {
+        display: flex;
+        align-items: center; /* Primarily just to center images */
+
+        list-style: none;
         color: #002A61;
-        font-family: "Instrument Serif";
-        font-size: 35px;
+        font-size: 2.5rem;
         font-style: normal;
         font-weight: 400;
-        line-height: normal;
+        line-height: 100%;
     }
 }
 
-.cookingInfo p:first-child::before {
-     content: ''; /* Essential for pseudo-elements */
-    display: block; /* Or inline-block, depending on desired layout */
-    width: 50px; /* Set dimensions of the pseudo-element */
-    height: 50px;
-    background-image: url('images/lightModeIcons/oven.png');
-    background-size: contain; /* Or cover, or specific values */
-    background-repeat: no-repeat;
+.cookingInfo li:not(:last-child) img {
+    position: absolute;
+    left: 25px;
+    width: auto;
+    height: 60px;
 }
-.cookingInfo p:nth-child(2)::before {
-    content: ''; /* Essential for pseudo-elements */
-    display: block; /* Or inline-block, depending on desired layout */
-    width: 50px; /* Set dimensions of the pseudo-element */
-    height: 50px;
-    background-image: url('images/lightModeIcons/clock.png');
-    background-size: contain; /* Or cover, or specific values */
-    background-repeat: no-repeat;
+
+
+.cookingInfo li:last-child img {
+    position: absolute;
+    left: 10px;
+    width: auto;
+    height: 60px;
 }
-.cookingInfo p:last-child::before {
-    content: ''; /* Essential for pseudo-elements */
-    display: block; /* Or inline-block, depending on desired layout */
-    width: auto; /* Set dimensions of the pseudo-element */
-    height: 50px;
-    background-image: url('images/lightModeIcons/plate.png');
-    background-size: contain; /* Or cover, or specific values */
-    background-repeat: no-repeat;
-}
+
 
 .introductoryParagraph {
     color: #000;
-    font-family: "Instrument Serif";
-    font-size: 32.5px;
+    font-size: 2.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
+
+
+
+figure > img {
+    width: 100%;
+    z-index: 0;
+}
+
 
 .darkMode {
     position: absolute;
@@ -90,14 +99,22 @@ header > p {
     right: 10%;
 }
 
+
+
+
+.recipeSections{
+    display: grid;
+    grid-template: 1fr / 1fr 2fr;
+    gap: 50px;
+}
+
 .directions {
-    margin-left: 45%;
+    order: 2;
 }
 
 .directions h2 {
     color: #000;
     text-align: center;
-    font-family: "Instrument Serif";
     font-size: 60px;
     font-style: normal;
     font-weight: 400;
@@ -109,15 +126,16 @@ header > p {
     list-style: none;
 }
 
+
 .ingredients {
-    position: absolute;
-    top: 1320px;
+    padding: 15px;
+    background: #DCD4C1;
+    border-radius: 10px;
 }
 
 .ingredients h2 {
     color: #000;
     text-align: center;
-    font-family: "Instrument Serif";
     font-size: 45px;
     font-style: normal;
     font-weight: 400;
