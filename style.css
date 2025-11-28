@@ -7,46 +7,37 @@
 }
 
 body {
-   margin: 10%;
+   margin: 10% 20%;
+   /* Don't use pixel margin here so the cooking info fits */
+   letter-spacing: 1px;
+   background-color: #f2eee4;
 }
 
-
 /* Header */
-
 h1 {
-    color: #000;
-    font-size: 6.5rem;
+    font-size: 6rem;
     font-weight: 400;
     margin-right: 50%;
 }
 
 header > p {
-    color: #0C0C0C;
     font-size: 2.75rem;
     font-weight: 400;
-    line-height: normal;
+    margin-right: 50%;
 }
 
-/* Body */
+/* Cooking Info */
 .cookingInfo {
     display: flex;
 
     position: absolute;
-    top: 125px;
-    right: 15%;
+    top: 11vw;
+    right: 20%;
     padding: 9px 50px;
     border-radius: 10px;
     background-color: #DCD4C1;
 
-    width: 22.5vw;
-
-    & ul {
-        /* Very slight alignment for text */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+    width: 20%;
 
     & li {
         display: flex;
@@ -68,7 +59,6 @@ header > p {
     height: 60px;
 }
 
-
 .cookingInfo li:last-child img {
     position: absolute;
     left: 10px;
@@ -76,36 +66,90 @@ header > p {
     height: 60px;
 }
 
-
+/* Intro Paragraph */
 .introductoryParagraph {
-    color: #000;
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
-
+/* Image */
 figure > img {
     width: 100%;
     z-index: 0;
 }
 
-
+/* Dark Mode Toggle */
 .darkMode {
+    display: flex;
+    align-items: center;
+
     position: absolute;
-    top: 5px;
-    right: 10%;
+    top: 5%;
+    right: 20%;
+    font-size: 2rem;
+}
+
+.darkMode .switch {
+    margin-left: 15px;
+    border-radius: 50px;
+
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+
+    &>input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    border-radius: 34px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #616161;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #333333;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 
 
-
+/* Main stuff */
 .recipeSections{
     display: grid;
     grid-template: 1fr / 1fr 2fr;
-    gap: 50px;
+    gap: 30px;
 }
 
 .directions {
@@ -113,9 +157,8 @@ figure > img {
 }
 
 .directions h2 {
-    color: #000;
     text-align: center;
-    font-size: 60px;
+    font-size: 4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -124,6 +167,22 @@ figure > img {
 
 .directions .stepsList {
     list-style: none;
+    padding: 0;
+}
+
+.directions li {
+    margin-bottom: 50px;
+}
+
+.directions h3 {
+    font-size: 3rem;
+    line-height: 0px;
+    text-wrap: nowrap;
+    color: #002A61;
+}
+
+.directions p {
+    font-size: 2rem;
 }
 
 
@@ -134,11 +193,139 @@ figure > img {
 }
 
 .ingredients h2 {
-    color: #000;
     text-align: center;
-    font-size: 45px;
+    font-size: 4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 1.125px;
+}
+
+.ingredients h3 {
+    font-size: 3rem;
+    position: relative;
+    left: -40px;
+    margin-bottom: 10px;
+}
+
+.ingredients li {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+}
+
+.ingredients span {
+    color: #002A61;
+}
+
+
+
+@media screen and (max-width: 1120px) {
+    body {
+        margin: 10%;
+        margin-top: 225px;
+        margin-bottom: 0px;
+    }
+
+    h1 {
+        margin-right: 10%;
+    }
+
+    header>p {
+        font-size: 2.75rem;
+        font-weight: 400;
+        margin-right: 10%;
+    }
+
+    .darkMode {
+        display: flex;
+        align-items: center;
+
+        position: absolute;
+        top: 3vw;
+        right: 10%;
+        font-size: 3.5rem;
+    }
+
+    .darkMode .switch {
+        margin-left: 15px;
+        width: 100px;
+        height: 60px;
+    }
+
+
+    .slider:before {
+        height: 52px;
+        width: 52px;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(38px);
+        -ms-transform: translateX(38px);
+        transform: translateX(38px);
+    }
+
+
+
+    .cookingInfo {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 9px 0px;
+
+        & li {
+            font-size: 3.5rem;
+            margin-left: 115px;
+            margin-right: 115px;
+        }
+    }
+
+    .cookingInfo li:not(:last-child) img {
+        position: absolute;
+        left: 35px;
+        width: auto;
+        height: 100px;
+    }
+
+    .cookingInfo li:last-child img {
+        position: absolute;
+        left: 10px;
+        width: auto;
+        height: 100px;
+    }
+
+    .recipeSections {
+        grid-template: 3fr 4fr / 1fr;
+        gap: 30px;
+    }
+
+    .ingredients h2 {
+        font-size: 4rem;
+    }
+
+    .ingredients li {
+        font-size: 2rem;
+        line-height: 150%;
+        margin-bottom: 20px;
+    }
+
+    .directions h2 {
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    body {
+        margin-top: 200px;
+    }
+
+    .darkMode {
+        top: 5%;
+        right: auto;
+    }
+
+    .darkMode .switch {
+        display: block;
+    }
 }
