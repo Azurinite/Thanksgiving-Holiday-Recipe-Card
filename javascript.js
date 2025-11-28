@@ -19,6 +19,7 @@ function enableDarkMode() {
         plateImage.src = "images/darkModeIcons/plate.png"
     }
 }
+
 const darkModeSwitch = document.querySelector('.darkModeInput');
 darkModeSwitch.addEventListener("click", enableDarkMode)
 
