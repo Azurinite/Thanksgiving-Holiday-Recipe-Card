@@ -1,4 +1,5 @@
 :root {
+    
     font-family: 'Instrument Serif', serif;
     font-size: 12px;
    /* Don't rlly know how rem works, 
@@ -6,7 +7,29 @@
    */
 }
 
+/* Dark Mode Settings */
+body.darkMode {
+    --cardColors: #1F1F1F;
+    --blueHighlight: #509CFF;
+    --blueHovering: #94c3ff;
+    /* These next 2 are here just for the "read more" button on phone */
+    --textColors: #F2F2F2;
+    --borderColors: #555555;
+
+    background-color: #1A1A1A;
+    color: var(--textColors);
+}
+
+
+
+
+
 body {
+    --cardColors: #DCD4C1;
+    --blueHighlight: #002A61;
+    --blueHovering: #1b7eff;
+    --textColors: #000000;
+    --borderColors: #838383;
    margin: 10% 20%;
    /* Don't use pixel margin here so the cooking info fits */
    letter-spacing: 1px;
@@ -29,13 +52,12 @@ header > p {
 /* Cooking Info */
 .cookingInfo {
     display: flex;
-
     position: absolute;
     top: 11vw;
     right: 20%;
     padding: 9px 50px;
     border-radius: 10px;
-    background-color: #DCD4C1;
+    background-color: var(--cardColors);
 
     width: 20%;
 
@@ -44,11 +66,16 @@ header > p {
         align-items: center; /* Primarily just to center images */
 
         list-style: none;
-        color: #002A61;
+        color: var(--blueHighlight);
         font-size: 2.5rem;
         font-style: normal;
         font-weight: 400;
         line-height: 100%;
+    }
+
+    & li:hover {
+        color: var(--blueHovering);
+        transition: all 100ms ease-in-out;
     }
 }
 
@@ -74,14 +101,37 @@ header > p {
     line-height: normal;
 }
 
+.introductoryParagraph .dots {
+    display: none;
+}
+
+.introductoryParagraph .readMore {
+    display: none;
+    align-self: center;
+    width: 50%;
+    padding: 10px;
+
+    border-radius: 10px;
+    border: 2px solid var(--borderColors);
+    background-color: var(--cardColors);
+
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-wrap: nowrap;
+    color: var(--textColors);
+    font-family: 'Instrument Serif', serif;
+}
+
 /* Image */
+figure {
+    margin: 50px 20px;
+}
 figure > img {
     width: 100%;
-    z-index: 0;
 }
 
 /* Dark Mode Toggle */
-.darkMode {
+.darkToggle {
     display: flex;
     align-items: center;
 
@@ -91,7 +141,7 @@ figure > img {
     font-size: 2rem;
 }
 
-.darkMode .switch {
+.darkToggle .switch {
     margin-left: 15px;
     border-radius: 50px;
 
@@ -154,6 +204,8 @@ input:checked + .slider:before {
 
 .directions {
     order: 2;
+    border-left: 7px solid var(--borderColors);
+    padding-left: 30px;
 }
 
 .directions h2 {
@@ -172,13 +224,28 @@ input:checked + .slider:before {
 
 .directions li {
     margin-bottom: 50px;
+    transition: all 200ms ease-in-out;
+}
+.directions li h3 {
+    transition: all 200ms ease-in-out;
+}
+
+.directions li:hover {
+    margin-left: 7px;
+    border-left: 5px solid var(--blueHovering);
+    padding-left: 20px;
+    transition: all 200ms ease-in-out;
+}
+.directions li:hover h3{
+    color: var(--blueHovering);
+    transition: all 200ms ease-in-out;
 }
 
 .directions h3 {
     font-size: 3rem;
     line-height: 0px;
     text-wrap: nowrap;
-    color: #002A61;
+    color: var(--blueHighlight);
 }
 
 .directions p {
@@ -188,7 +255,7 @@ input:checked + .slider:before {
 
 .ingredients {
     padding: 15px;
-    background: #DCD4C1;
+    background: var(--cardColors);
     border-radius: 10px;
 }
 
@@ -214,7 +281,13 @@ input:checked + .slider:before {
 }
 
 .ingredients span {
-    color: #002A61;
+    color: var(--blueHighlight);
+    transition: all 100ms ease-in-out;
+}
+.ingredients span:hover {
+    color: var(--blueHovering);
+    font-size: 2.15rem;
+    transition: all 100ms ease-in-out;
 }
 
 
@@ -236,7 +309,7 @@ input:checked + .slider:before {
         margin-right: 10%;
     }
 
-    .darkMode {
+    .darkToggle {
         display: flex;
         align-items: center;
 
@@ -246,7 +319,7 @@ input:checked + .slider:before {
         font-size: 3.5rem;
     }
 
-    .darkMode .switch {
+    .darkToggle .switch {
         margin-left: 15px;
         width: 100px;
         height: 60px;
@@ -310,6 +383,14 @@ input:checked + .slider:before {
         margin-bottom: 20px;
     }
 
+    .directions {
+        border-left: 0px;
+        padding-left: 0px;
+
+        border-top: 7px solid var(--borderColors);
+
+    }
+
     .directions h2 {
         margin-bottom: 50px;
     }
@@ -320,12 +401,48 @@ input:checked + .slider:before {
         margin-top: 200px;
     }
 
-    .darkMode {
+    .introductoryParagraph {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .introductoryParagraph p {
+        mask-image: linear-gradient(to bottom, transparent, black 0%, black 20%, transparent);
+    }
+
+    .introductoryParagraph .dots {
+        display: inline;
+    }
+    .introductoryParagraph .more {
+        display: none;
+    }
+
+    .introductoryParagraph .readMore {
+        display: inline;
+    }
+
+    figure > img {
+        display: block; 
+        position: relative;
+        width: 130%; /* Odd value? Setting it like this lets it always span across the page... for sum reason. */
+        left: 50%; 
+        right: 50%; 
+        transform:translateX(-50%);
+    }
+    figure {
+        position: relative;
+        margin: 50px 0px;
+        padding: 0px;
+    }
+
+    .darkToggle {
         top: 5%;
         right: auto;
     }
 
-    .darkMode .switch {
+    .darkToggle .switch {
         display: block;
     }
 }

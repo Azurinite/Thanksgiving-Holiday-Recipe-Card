@@ -7,6 +7,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Recipe",
+            "name": "Lentil and Sweet Potato Salad",
+            "author": {
+            "@type": "Person",
+            "name": "Cathy Namerson"
+            },
+            "datePublished": "2025-11-25",
+            "description": "This salad is a hearty, vibrant Thanksgiving dish!",
+            "prepTime": "PT25M",
+            "totalTime": "PT50M",
+            "image": "https://realfood.tesco.com/media/images/LentilSalad11400x919-dc770869-ad92-45a3-bf61-a52e2a925c08-0-1400x919.jpg",
+            "recipeYield": "6-8 servings",
+            "recipeCategory": "Food",
+            "recipeCuisine": "American",
+            "keywords": ["potato salad", "lentil", "sweet", "Thanksgiving recipe"],
+            "recipeIngredient": [
+                "2 medium sweet potatoes, peeled & cubed",
+                "1 cup dried green lentils, rinsed",
+                "5 tablespoons olive oil",
+                "1 teaspoon smoked paparika",
+                "1/2 teaspoon ground cumin",
+                "Salt & pepper",
+                "1 small red onion",
+                "1 cup chopped kale or baby spinach",
+                "1/2 cup dried cranberries or pomegranate arils",
+                "1/4 cup toasted pumpki seeds or chopped walnuts",
+                "2 tablespoons apple cider vinegar or lemon juice",
+                "1 tablespoon maple syrup",
+                "1 teaspoon dijon mustard"
+            ],
+            "recipeInstructions": [
+                {
+                    "@type": "HowToStep",
+                    "text": "Add the rinsed lentils to a pot with 3 cups of water. Bring to a boil, then reduce heat and simmer for 20-25 minutes, or until tender but not mushy. Drain and set aside to cool slightly.",
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Preheat your oven to 400°F (200°C). Toss the sweet potato cubes with olive oil, smoked paprika, cumin, salt, and pepper. Spread on a baking sheet and roast for 20-25 minutes, or until golden and tender",
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "While the lentils and sweet potatoes cook, finely dice the red onion, chop the kale or spinach, and toast the pumpkin seeds or nuts if needed.",
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Whisk together olive oil, apple cider vinegar or lemon juice, maple syrup, Dijon mustard, salt, and pepper in a small bowl or jar.",
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "In a large bowl, combine the warm lentils, roasted sweet potatoes, red onion, greens, and dried cranberries or pomegranate arils.",
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Sprinkle in the toasted pumpkin seeds or chopped walnuts.",
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Pour the dressing over the salad and gently toss until everything is evenly coated. Taste and adjust seasoning as needed.",
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Enjoy warm or at room temperature as a hearty Thanksgiving side.",
+                }
+            ],
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -19,37 +89,41 @@
     </header>
 
     <main>
-        <section class="darkMode">
+        <section class="darkToggle">
             <p>Enable Dark Mode:</p>
             <label class="switch">
-                <input type="checkbox" class="darkToggle">
+                <input type="checkbox" class="darkModeInput">
                 <span class="slider"></span>
             </label>
         </section>
 
         <article class="introductoryParagraph">
-            <p>This Lentil and Sweet Potato Salad is a hearty, vibrant dish that brings together cozy autumn flavors with bright, fresh accents. 
-                Packed with protein-rich lentils, caramelized sweet potatoes, and a zesty dressing, it&#39s perfect for a wholesome Thanksgiving side. 
-                Whether served warm or at room temperature, it adds a nourishing, colorful touch to your holiday table.
+            <p>This Lentil and Sweet Potato Salad is a hearty, vibrant dish that brings together cozy autumn flavors with<span class="dots">...</span>
+                <span class="more">
+                    bright, fresh accents. 
+                    Packed with protein-rich lentils, caramelized sweet potatoes, and a zesty dressing, it&#39s perfect for a wholesome Thanksgiving side. 
+                    Whether served warm or at room temperature, it adds a nourishing, colorful touch to your holiday table.
+                </span>
             </p>
+            <button class="readMore">Read More</button>
         </article>
 
         <figure class="image">
-            <img src="images/potatoSaladImage.png" alt="Lentil and Sweet Potato Salad Image">
+            <img src="images/potatoSaladImage.png" alt="Lentil and Sweet Potato Salad Image" alt="Image of lentil and sweet potato salad">
         </figure>
 
         <section class="cookingInfo"> <!--Future note: use ::before for logos-->
             <ul>
                 <li class="infoItem">
-                    <img src="images/lightModeIcons/oven.png">
+                    <img src="images/lightModeIcons/oven.png" class="ovenImg">
                     <p>Prep time: 25 mins</p>
                 </li>
                  <li class="infoItem">
-                    <img src="images/lightModeIcons/clock.png">
+                    <img src="images/lightModeIcons/clock.png" class="clockImg">
                     <p>Total time: 50 mins</p>
                 </li>
                  <li class="infoItem">
-                    <img src="images/lightModeIcons/plate.png">
+                    <img src="images/lightModeIcons/plate.png" class="plateImg">
                     <p>Yield: 6-8 servings</p>
                 </li>
             </ul>
@@ -113,7 +187,7 @@
                             <span class="unit">1 cup</span> dried green or brown lentils, rinsed
                         </li>
                         <li class="ingredientItem">
-                            <span class="unit">2 medium</span> sweet potatoes, peeled and cubed
+                            <span class="unit">2</span> medium sweet potatoes, peeled and cubed
                         </li>
                         <li class="ingredientItem">
                             <span class="unit">2 tablespoons</span> olive oil (plus more as needed)
